@@ -1,0 +1,15 @@
+{
+  "name": "my-nodejs-app",
+  "version": "1.0.0",
+  "description": "Microservice NodeJS pour Dapr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christophe GIGAX",
+  "license": "BSD-2-Clause-Patent",
+  "dependencies": {
+    "express": "^4.17.2",
+    "isomorphic-fetch": "^3.0.0"
+  }
+}
