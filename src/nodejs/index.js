@@ -29,7 +29,21 @@ app.get('/product', (_req, res) => {
 app.get('/product/:id', (req, res) => {
     const key = req.params.id;
 
-    console.log("Etat récupéré pour l'ID : " + key);
+    fetch(`${storeUrl}/product_${key}`)
+        .then((response) => {
+            if (!response.ok) {
+                response.text().then((text) => { console.log(text); });
+                throw `Impossible de récupérer le produit avec l'ID ${key}`;
+            }
+
+            return response.text();
+        }).then((products) => {
+            console.log(products);
+            res.send(products);
+        }).catch((error) => {
+            console.log(error);
+            res.status(500).send({ message: error });
+        });
 });
 
 app.post('/product', (req, res) => {
@@ -37,28 +51,47 @@ app.post('/product', (req, res) => {
     const productId = data.productId;
     console.log("Nouveau produit! ID du produit: " + productId);
 
-    const state = [{
-        key: 'product',
-        value: data
-    }];
+    var calls = [
+        fetch(storeUrl, {
+            method: 'POST',
+            body: JSON.stringify([{ key: 'product', value: data }]),
+            headers: { 'Content-Type': 'application/json' }
+        }),
+        fetch(storeUrl, {
+            method: 'POST',
+            body: JSON.stringify([{ key: `product_${productId}`, value: data }]),
+            headers: { 'Content-Type': 'application/json' }
+        })
+    ];
 
-    fetch(storeUrl, {
-        method: 'POST',
-        body: JSON.stringify(state),
-        headers: { 'Content-Type': 'application/json' }
-    }).then(response => {
-        if (!response.ok) {
+    Promise
+    .all(calls)
+    .then((results) => {
+        if (!results[0].ok || !results[1].ok) {
             throw "Impossible de sauvegarder l'état";
         }
 
         console.log("Etat sauvegardé !");
         res.status(200).send();
-    })
+    });
 });
 
-app.delete('/order/:id', (req, res) => {
+app.delete('/product/:id', (req, res) => {
     const key = req.params.id;
     console.log('Suppression du produit avec ID ' + key);
+
+    fetch(`${storeUrl}/product_${key}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw "Impossible de supprimer le produit";
+        }
+
+        console.log("Produit supprimé !");
+        res.status(200).send();
+    });
 });
 
 app.listen(port, () => console.log(`L'application écoute sur le port ${port}!`));
