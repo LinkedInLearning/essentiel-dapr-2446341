@@ -56,7 +56,7 @@ app.post('/product', (req, res) => {
     })
 });
 
-app.delete('/order/:id', (req, res) => {
+app.delete('/product/:id', (req, res) => {
     const key = req.params.id;
     console.log('Suppression du produit avec ID ' + key);
 });
