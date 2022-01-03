@@ -4,7 +4,7 @@ require('isomorphic-fetch');
 const app = express();
 app.use(express.json());
 
-const storeName = 'statestore'
+const storeName = 'linkedin-dapr-store'
 const storeUrl = `http://localhost:3500/V1.0/state/${storeName}`;
 const port = 3000;
 
