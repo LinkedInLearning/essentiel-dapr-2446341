@@ -22,7 +22,7 @@ app.post('/product', (req, res) => {
     console.log("Nouveau produit! ID du produit: " + productId);
 });
 
-app.delete('/order/:id', (req, res) => {
+app.delete('/product/:id', (req, res) => {
     const key = req.params.id;
     console.log('Suppression du produit avec ID ' + key);
 });
