@@ -6,7 +6,7 @@ import json
 
 #code
 app = App()
-logging.basicConfig(level = logging.ERROR)
+logging.basicConfig(level = logging.DEBUG)
 #Subscribe to a topic 
 @app.subscribe(pubsub_name='linkedin-dapr-pubsub', topic='product-created')
 def mytopic(event: v1.Event) -> None:
