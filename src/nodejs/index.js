@@ -8,6 +8,10 @@ const storeName = 'linkedin-dapr-store'
 const storeUrl = `http://localhost:3500/V1.0/state/${storeName}`;
 const port = 3000;
 
+const pubSubName = 'linkedin-dapr-pubsub';
+const topicName = 'product-created';
+const pubSubUrl = `http://localhost:3500/v1.0/publish/${pubSubName}/${topicName}`;
+
 app.get('/product', (_req, res) => {
     fetch(`${storeUrl}/product`)
         .then((response) => {
@@ -60,6 +64,11 @@ app.post('/product', (req, res) => {
         fetch(storeUrl, {
             method: 'POST',
             body: JSON.stringify([{ key: `product_${productId}`, value: data }]),
+            headers: { 'Content-Type': 'application/json' }
+        }),
+        fetch(pubSubUrl, {
+            method: 'POST',
+            body: JSON.stringify({ product: data }),
             headers: { 'Content-Type': 'application/json' }
         })
     ];
