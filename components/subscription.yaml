@@ -7,4 +7,4 @@ spec:
   route: /product
   pubsubname: linkedin-dapr-pubsub
 scopes:
-  python-app
+- python-app
