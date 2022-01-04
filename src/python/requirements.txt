@@ -1,0 +1,2 @@
+cloudevents==1.2.0
+dapr.ext.grpc==1.4.1
