@@ -6,5 +6,5 @@ spec:
   topic: product-created
   route: /product
   pubsubname: linkedin-dapr-pubsub
-scope:
+scopes:
   python-app
