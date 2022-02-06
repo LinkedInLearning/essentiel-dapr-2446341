@@ -11,6 +11,10 @@ spec:
     metadata:
       labels:
         app: python-app
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "python-app"
+        dapr.io/app-port: "6002"
     spec:
       containers:
         - name: app
@@ -27,6 +31,5 @@ spec:
   selector:
     app: python-app
   ports:
-    - port: 80
+    - port: 6002
       targetPort: 6002
-  type: ClusterIP
