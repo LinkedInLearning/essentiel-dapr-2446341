@@ -15,6 +15,7 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/app-id: "python-app"
         dapr.io/app-port: "6002"
+        dapr.io/app-protocol: "grpc"
     spec:
       containers:
         - name: app
