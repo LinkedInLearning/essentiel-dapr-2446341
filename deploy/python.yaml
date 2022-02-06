@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+        - name: app
+          image: christophegigax/python-app
+          ports:
+            - containerPort: 6002
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-app
+spec:
+  selector:
+    app: python-app
+  ports:
+    - port: 80
+      targetPort: 6002
+  type: ClusterIP

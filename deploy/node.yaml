@@ -11,12 +11,16 @@ spec:
     metadata:
       labels:
         app: node-app
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "node-app"
+        dapr.io/app-port: "3000"
     spec:
       containers:
         - name: app
-          image: linkedin-learning/node-app:latest
+          image: christophegigax/node-app
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
           imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -28,5 +32,5 @@ spec:
     app: node-app
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 3000
   type: LoadBalancer
