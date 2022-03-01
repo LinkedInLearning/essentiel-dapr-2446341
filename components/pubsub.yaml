@@ -4,8 +4,8 @@ metadata:
   name: linkedin-dapr-pubsub
   namespace: default
 spec:
-  type: namespace: default
+  type: pubsub.azure.servicebus
   version: v1
   metadata:
   - name: connectionString 
-    value: "Endpoint=sb://dapr-container-apps-servicebus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey={Key};EntityPath=product-created"
+    value: "<your-connection-string>"
