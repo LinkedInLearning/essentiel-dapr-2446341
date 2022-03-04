@@ -1,0 +1,19 @@
+- name: linkedin-dapr-store
+  type: state.redis
+  version: v1
+  metadata:
+    - name: redisHost
+      secretRef: redis-host
+    - name: redisPassword
+      secretRef: redis-password
+    - name: actorStateStore
+      value: "true"
+
+- name: linkedin-dapr-pubsub
+  type: pubsub.azure.servicebus
+  version: v1
+  metadata:
+    - name: connectionString 
+      secretRef: servicebus-connectionstring
+
+
