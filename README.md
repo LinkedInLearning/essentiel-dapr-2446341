@@ -4,7 +4,7 @@ Ce dossier Repository est lié au cours `L'essentiel de Dapr`. Le cours entier e
 
 ![L'essentiel de Dapr][lil-thumbnail-url]
 
-DESCRIPTION DE LA FORMATION
+Pour construire votre projet suivant une architecture de microservices, mettez en place Dapr pour votre application. Dans cette formation, découvrez une nouvelle façon de développer des applications en suivant les meilleurs pratiques et les concepts de développement de système distribué avec des microservices. Christophe Gigax, MVP Microsoft et architecte logiciel, vous donne les méthodes et les outils pour utiliser au mieux le runtime Dapr et dompter ce type d'architecture pour vos environnements.
 
 ## Instructions
 
