@@ -28,8 +28,7 @@ La branche `main` correspond au code à la fin de la formation.
 
 **Christophe Gigax**
 
-Retrouvez mes autres formations sur [LinkedIn Learning][lil-URL-trainer].
+Retrouvez mes autres formations sur [LinkedIn Learning](https://www.linkedin.com/learning/instructors/christophe-gigax).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]:  https://www.linkedin.com/learning/l-essentiel-de-dapr/bienvenue-dans-l-essentiel-de-dapr
-[lil-thumbnail-url]: ![Uploading image.png…]()[lil-URL-trainer]: https://www.linkedin.com/learning/instructors/christophe-gigax
