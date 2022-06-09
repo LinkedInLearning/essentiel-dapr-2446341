@@ -2,7 +2,7 @@
 
 Ce dossier Repository est lié au cours `L'essentiel de Dapr`. Le cours entier est disponible sur [LinkedIn Learning][lil-course-url].
 
-![L'essentiel de Dapr][lil-thumbnail-url]
+![image](https://user-images.githubusercontent.com/71371373/172781325-60666ff5-6a7f-4ba9-b603-cf70364431a8.png)
 
 Pour construire votre projet suivant une architecture de microservices, mettez en place Dapr pour votre application. Dans cette formation, découvrez une nouvelle façon de développer des applications en suivant les meilleurs pratiques et les concepts de développement de système distribué avec des microservices. Christophe Gigax, MVP Microsoft et architecte logiciel, vous donne les méthodes et les outils pour utiliser au mieux le runtime Dapr et dompter ce type d'architecture pour vos environnements.
 
@@ -32,5 +32,4 @@ Retrouvez mes autres formations sur [LinkedIn Learning][lil-URL-trainer].
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]:  https://www.linkedin.com/learning/l-essentiel-de-dapr/bienvenue-dans-l-essentiel-de-dapr
-[lil-thumbnail-url]: https://
-[lil-URL-trainer]: https://www.linkedin.com/learning/instructors/christophe-gigax
+[lil-thumbnail-url]: ![Uploading image.png…]()[lil-URL-trainer]: https://www.linkedin.com/learning/instructors/christophe-gigax
